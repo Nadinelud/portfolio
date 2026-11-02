@@ -46,8 +46,12 @@ export default function Contact() {
   const showEmail = useEmail()
 
   return (
-    <footer id="contact" aria-labelledby="contact-title" className="pt-20 md:pt-32">
-      <div className="container-page">
+    <footer
+      id="contact"
+      aria-labelledby="contact-title"
+      className="flex min-h-[calc(100svh+1rem)] flex-col pt-20 md:min-h-[calc(100svh+4rem)] md:pt-32"
+    >
+      <div className="container-page flex flex-1 flex-col">
         <SectionHeading index="04" title="Contact" id="contact-title" />
 
         <Reveal>
@@ -63,7 +67,7 @@ export default function Contact() {
           </a>
         </Reveal>
 
-        <Reveal delay={80} className="mt-8 flex flex-wrap gap-3">
+        <Reveal delay={80} className="mt-8 flex flex-wrap gap-3 pb-24">
           <CopyEmail />
           <a href={person.github} target="_blank" rel="noreferrer" className="btn btn-ghost">
             GitHub
@@ -75,7 +79,7 @@ export default function Contact() {
           </a>
         </Reveal>
 
-        <div className="mt-24 flex flex-wrap items-center justify-between gap-4 border-t border-line py-8 text-sm text-muted">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-4 border-t border-line py-8 text-sm text-muted">
           <p>
             © {new Date().getFullYear()} {person.name}
           </p>

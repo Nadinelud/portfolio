@@ -3,7 +3,8 @@ import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 
 const ScrollContext = createContext(null)
-const HEADER_OFFSET = -72
+// Matches the fixed header (h-16), so the container sits right under it.
+const HEADER_OFFSET = -64
 
 export function ScrollProvider({ children }) {
   const lenisRef = useRef(null)
@@ -27,7 +28,8 @@ export function ScrollProvider({ children }) {
   }, [])
 
   const scrollTo = useCallback((id) => {
-    const el = id === 'top' ? document.body : document.getElementById(id)
+    const section = id === 'top' ? null : document.getElementById(id)
+    const el = id === 'top' ? document.body : (section?.querySelector('.container-page') ?? section)
     if (!el) return
     const lenis = lenisRef.current
     if (lenis) {

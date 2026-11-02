@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { person, sections } from '../data/site.js'
+import { sections } from '../data/site.js'
 import { useScroll } from '../lib/scroll.jsx'
 import { useReducedMotion } from '../lib/hooks.js'
 import { useEmail } from '../lib/email.jsx'
@@ -63,10 +63,9 @@ export default function Nav() {
           href="#top"
           onClick={go('top')}
           className="press text-xl font-bold tracking-tight"
-          aria-label={`${person.name}, back to top`}
+          aria-label="Portfolio, back to top"
         >
-          {person.nickname}
-          <span className="text-butter">.</span>
+          Portfolio
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

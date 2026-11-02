@@ -18,9 +18,6 @@ export const about = [
   "I'm currently looking for an internship where I can learn from a real team and contribute to real products.",
 ]
 
-// [TODO] Fill in the internship role, then the placeholder in About disappears.
-export const internshipRole = null
-
 export const skills = [
   {
     group: 'Frontend',

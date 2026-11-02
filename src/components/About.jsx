@@ -1,4 +1,4 @@
-import { about, internshipRole, person } from '../data/site.js'
+import { about, person } from '../data/site.js'
 import SectionHeading from './SectionHeading.jsx'
 import Reveal from './Reveal.jsx'
 
@@ -22,15 +22,6 @@ export default function About() {
                 {p}
               </Reveal>
             ))}
-            <Reveal delay={160}>
-              {internshipRole ? (
-                <p className="text-lg text-ink">{internshipRole}</p>
-              ) : (
-                <p className="inline-flex rounded-full border border-dashed border-muted/50 px-4 py-1.5 text-sm text-muted">
-                  Internship role: to be added
-                </p>
-              )}
-            </Reveal>
           </div>
         </div>
       </div>
