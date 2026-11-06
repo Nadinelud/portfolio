@@ -5,9 +5,8 @@ import relaFoundationHome from '../assets/rela/foundation-home.webp'
 import relaFoundationVolunteers from '../assets/rela/foundation-volunteers.webp'
 import relaVolunteerProfile from '../assets/rela/foundation-volunteer-profile.webp'
 
-import ufestUnveiling from '../assets/umnfest/events-unveiling.webp'
-import ufestHeader from '../assets/umnfest/events-header.webp'
-import ufestCountdown from '../assets/umnfest/events-countdown.webp'
+import ufestVideo from '../assets/umnfest/events.mp4'
+import ufestPoster from '../assets/umnfest/events-poster.webp'
 
 import snakeVideo from '../assets/wemen/snake.mp4'
 import snakePoster from '../assets/wemen/snake-poster.webp'
@@ -19,7 +18,6 @@ import moodHero from '../assets/mood/hero.webp'
 import moodSliders from '../assets/mood/sliders.webp'
 
 const PHONE = { width: 640, height: 1386 }
-const WIDE = { width: 1600, height: 700 }
 const VIDEO = { width: 1280, height: 548 }
 
 export const projects = [
@@ -99,17 +97,24 @@ export const projects = [
       { label: 'Website', href: 'https://umnfestival.com/' },
     ],
     cover: {
-      kind: 'image',
-      src: ufestUnveiling,
-      ...WIDE,
-      alt: 'Unveiling event card on the UMN Festival Events page',
+      kind: 'video',
+      src: ufestVideo,
+      poster: ufestPoster,
+      width: 1280,
+      height: 720,
+      alt: 'Scrolling through the UMN Festival Events page',
     },
     gallery: {
       kind: 'viewer',
       items: [
-        { type: 'image', src: ufestUnveiling, ...WIDE, caption: 'Unveiling event card on the Events page' },
-        { type: 'image', src: ufestHeader, ...WIDE, caption: 'Events page header' },
-        { type: 'image', src: ufestCountdown, ...WIDE, caption: 'Countdown to U-Care' },
+        {
+          type: 'video',
+          src: ufestVideo,
+          poster: ufestPoster,
+          width: 1280,
+          height: 720,
+          caption: 'Scrolling through the Events page',
+        },
       ],
     },
   },

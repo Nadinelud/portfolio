@@ -33,10 +33,14 @@ function ViewerVideo({ item, active }) {
 
 function Viewer({ items }) {
   const [index, setIndex] = useState(0)
+  const single = items.length === 1
 
   return (
     <div>
-      <div className="relative aspect-[16/7] overflow-hidden rounded-xl border border-line bg-forest">
+      <div
+        className="relative overflow-hidden rounded-xl border border-line bg-forest"
+        style={{ aspectRatio: single ? `${items[0].width} / ${items[0].height}` : '16 / 7' }}
+      >
         {items.map((item, i) => {
           const on = i === index
           return (
@@ -63,33 +67,37 @@ function Viewer({ items }) {
         })}
       </div>
 
-      <p className="eyebrow mt-3" aria-live="polite">
-        {items[index].caption}
-      </p>
+      {!single && (
+        <p className="eyebrow mt-3" aria-live="polite">
+          {items[index].caption}
+        </p>
+      )}
 
-      <ul className="mt-3 flex gap-3" aria-label="Choose a picture">
-        {items.map((item, i) => (
-          <li key={item.caption} className="w-24 sm:w-32">
-            <button
-              type="button"
-              onClick={() => setIndex(i)}
-              aria-pressed={i === index}
-              aria-label={item.caption}
-              className={`press block aspect-[16/9] w-full overflow-hidden rounded-lg border-2 transition-[border-color,opacity] duration-200 ${
-                i === index ? 'border-butter' : 'border-line opacity-70 hover:opacity-100'
-              }`}
-            >
-              <img
-                src={item.type === 'video' ? item.poster : item.src}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover object-left-top"
-              />
-            </button>
-          </li>
-        ))}
-      </ul>
+      {!single && (
+        <ul className="mt-3 flex gap-3" aria-label="Choose a picture">
+          {items.map((item, i) => (
+            <li key={item.caption} className="w-24 sm:w-32">
+              <button
+                type="button"
+                onClick={() => setIndex(i)}
+                aria-pressed={i === index}
+                aria-label={item.caption}
+                className={`press block aspect-[16/9] w-full overflow-hidden rounded-lg border-2 transition-[border-color,opacity] duration-200 ${
+                  i === index ? 'border-butter' : 'border-line opacity-70 hover:opacity-100'
+                }`}
+              >
+                <img
+                  src={item.type === 'video' ? item.poster : item.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-left-top"
+                />
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }

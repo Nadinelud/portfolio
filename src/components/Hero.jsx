@@ -1,18 +1,13 @@
 import { person } from '../data/site.js'
-import { useScroll } from '../lib/scroll.jsx'
-import { useEmail } from '../lib/email.jsx'
 import TopoCanvas from './TopoCanvas.jsx'
 import Reveal from './Reveal.jsx'
-import { ArrowDown, ArrowUpRight } from './Icons.jsx'
+import { ArrowUpRight } from './Icons.jsx'
 
 export default function Hero() {
-  const { scrollTo } = useScroll()
-  const showEmail = useEmail()
-
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[92svh] items-end overflow-hidden pt-28 pb-16 md:pb-24"
+      className="relative isolate flex min-h-[92svh] items-end overflow-hidden pt-28 pb-12 md:pb-16"
     >
       <TopoCanvas className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]" />
 
@@ -41,16 +36,9 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={240} className="mt-10 flex flex-wrap gap-3">
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault()
-              scrollTo('projects')
-            }}
-            className="btn btn-primary"
-          >
-            View projects
-            <ArrowDown />
+          <a href={person.cv} target="_blank" rel="noreferrer" className="btn btn-primary">
+            View CV
+            <ArrowUpRight />
           </a>
           <a href={person.github} target="_blank" rel="noreferrer" className="btn btn-ghost">
             GitHub
@@ -60,14 +48,6 @@ export default function Hero() {
             LinkedIn
             <ArrowUpRight />
           </a>
-          <button type="button" onClick={showEmail} className="btn btn-ghost">
-            Email
-          </button>
-          {person.cv && (
-            <a href={person.cv} download className="btn btn-ghost">
-              Download CV
-            </a>
-          )}
         </Reveal>
       </div>
     </section>

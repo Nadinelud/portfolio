@@ -12,9 +12,9 @@ export default function Projects() {
   const close = useCallback(() => setOpenId(null), [])
 
   return (
-    <section id="projects" aria-labelledby="projects-title" className="py-20 md:py-32">
+    <section id="projects" aria-labelledby="projects-title" className="py-12 md:py-20">
       <div className="container-page">
-        <SectionHeading index="01" title="Projects" id="projects-title" />
+        <SectionHeading index="02" title="Projects" id="projects-title" />
 
         <ul className="grid gap-6 md:grid-cols-2 md:gap-8">
           {projects.map((p, i) => (

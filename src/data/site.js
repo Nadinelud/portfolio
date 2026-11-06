@@ -9,8 +9,8 @@ export const person = {
   email: 'nadineludony@gmail.com',
   github: 'https://github.com/Nadinelud',
   linkedin: 'https://www.linkedin.com/in/nadineludony/',
-  // [TODO] cv.pdf is not ready yet. Set this to the imported file to show the Download CV button.
-  cv: null,
+  // File lives in public/. BASE_URL keeps the path right under the /portfolio/ base.
+  cv: `${import.meta.env.BASE_URL}Nadine-Kay-Ludony-CV.pdf`,
 }
 
 export const about = [
@@ -19,22 +19,39 @@ export const about = [
 ]
 
 export const skills = [
+  { group: 'Programming languages', items: ['Python', 'JavaScript', 'Kotlin', 'HTML', 'CSS'] },
   {
-    group: 'Frontend',
-    items: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Responsive design', 'Vite'],
+    group: 'Software development',
+    items: [
+      'Object-oriented programming (OOP)',
+      'React',
+      'Tailwind CSS',
+      'Vite',
+      'Responsive web design',
+      'Mobile app programming',
+    ],
   },
   { group: 'UI design', items: ['Figma', 'Designing interfaces for multiple user roles'] },
-  { group: 'AI', items: ['Python', 'Training and testing an AI model'] },
-  { group: 'Tools', items: ['Git', 'GitHub', 'GitHub Pages', 'AI-assisted development'] },
   {
-    group: 'Working style',
-    items: ['Teamwork in 4–5 person teams', 'Building under hackathon time pressure'],
+    group: 'Artificial intelligence',
+    items: ['Training and testing AI models', 'AI-assisted development'],
   },
+  { group: 'Tools and platforms', items: ['Git', 'GitHub', 'GitHub Pages'] },
+  {
+    group: 'Professional skills',
+    items: [
+      'Time management',
+      'Teamwork',
+      'Working under pressure',
+      'Quick learning',
+      'Explaining difficult concepts clearly',
+    ],
+  },
+  { group: 'Languages', items: ['Fluent English'] },
 ]
 
 export const sections = [
-  { id: 'projects', label: 'Projects' },
   { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
   { id: 'skills', label: 'Skills' },
-  { id: 'contact', label: 'Contact' },
 ]

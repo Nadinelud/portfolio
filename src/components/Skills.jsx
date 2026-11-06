@@ -4,7 +4,7 @@ import Reveal from './Reveal.jsx'
 
 export default function Skills() {
   return (
-    <section id="skills" aria-labelledby="skills-title" className="py-20 md:py-32">
+    <section id="skills" aria-labelledby="skills-title" className="py-12 md:py-20">
       <div className="container-page">
         <SectionHeading index="03" title="Skills" id="skills-title" />
 
